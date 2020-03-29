@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lawrencefmm/app.git"
+    "url": "git+https://github.com/lawrencefmm/judge-dev.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lawrencefmm/app/issues"
+    "url": "https://github.com/lawrencefmm/judge-dev/issues"
   },
-  "homepage": "https://github.com/lawrencefmm/app#readme",
+  "homepage": "https://github.com/lawrencefmm/judge-dev#readme",
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.20.13",
