@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,9 @@
   "homepage": "https://github.com/lawrencefmm/app#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.20.13"
+    "knex": "^0.20.13",
+    "mysql": "^2.18.1",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
