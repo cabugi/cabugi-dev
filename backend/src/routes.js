@@ -30,7 +30,7 @@ routes.post('/users/register', async (req, res)  => {
         // Check if a user with that username or email exists
         const checkUsername = await connection.select('*').from('users').where('username', username);
         const checkEmail = await connection.select('*').from('users').where('email', email);       
-        if(check.length || checkEmail) return res.status(400).send("User already exists");
+        if(checkUsername.length || checkEmail.length) return res.status(400).send("User already exists");
 
         // Generate a random id to user
         const id = crypto.randomBytes(4).toString('HEX');

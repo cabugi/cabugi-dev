@@ -14,7 +14,7 @@ exports.up = function(knex) {
         table.string('permissions').defaultTo('user');
         table.boolean('contact'); // Permission checkbox to contact their email;
         table.timestamps();
-        
+             
       });
 };
 
