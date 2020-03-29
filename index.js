@@ -6,4 +6,4 @@ app.get('/blog/:postName', (req, res) => {
 	res.send(req.params.postName);
 });
 
-app.listen(2020);asas
+app.listen(2020);
