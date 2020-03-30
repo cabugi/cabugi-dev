@@ -4,7 +4,6 @@ const connection = require('../database/connection');
 
 module.exports = {
     async list(req, res) {
-        console.log("listando!");
 
         const { page = 1 } = req.query;
 
@@ -12,11 +11,12 @@ module.exports = {
             .limit(20)
             .offset((page - 1) * 20)
             .select('*');
+
         return res.json(check);
     },
 
     async register(req, res) {
-        console.log("RODANDO");
+
         const {
             username,
             name,
@@ -32,11 +32,10 @@ module.exports = {
 
         // Check if a user with that username or email exists
         const check = await connection('users').where({
-            username: '${username}',
-            email: '${email}',
+            username: `${username}`,
+            email: `${email}`,
             }).select('*');
-        console.log(check);
-        // const checkEmail = await connection('users').where('email', email);       
+
         if(check.length) {
             return res.status(400).send("User already exists");
         }
@@ -45,7 +44,6 @@ module.exports = {
         const id = await crypto.randomBytes(4).toString('HEX');
         const permissions = 'user';
 
-        console.log("hmm")
         await connection('users').insert({
             id,
             username,
