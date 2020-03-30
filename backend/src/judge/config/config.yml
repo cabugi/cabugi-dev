@@ -1,4 +1,4 @@
 problem_storage_root:
-  - problems
+  - ../../problems
 runtime:
   g++17: /usr/bin/g++

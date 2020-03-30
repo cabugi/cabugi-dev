@@ -19,7 +19,7 @@ const judge = async function(problemName, filePath, configPath) {
             "status_code": "CE",
             "error_log": stdout
         });
-        
+
     } else {
         // Remove formatting
         stdout = stdout.replace(/\u001b\[\d+m/gi, '');
@@ -28,7 +28,7 @@ const judge = async function(problemName, filePath, configPath) {
         stdout = stdout.split('\n');
         stdout = stdout.slice(6, stdout.length - 4);
 
-        let batch = 0, test_case = 0;
+        let batch = 0, test_case =  0;
         for (let i = 0; i < stdout.length; i++) {     
             if (stdout[i].search('Batch') !== -1) batch++;
             else {
