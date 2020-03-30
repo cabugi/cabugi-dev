@@ -1,0 +1,3 @@
+[submodule "backend/judge/judge"]
+	path = backend/judge/judge
+	url = https://github.com/DMOJ/judge
