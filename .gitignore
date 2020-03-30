@@ -1,3 +1,4 @@
 backend/node_modules
 backend/src/database/db.sqlite
+backend/src/judge/submissions/*
 backend/judge/judgeenv
