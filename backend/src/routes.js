@@ -4,10 +4,9 @@ const crypto = require('crypto');
 
 
 
-routes.get('/users', async(req, res) => {
+routes.get('/users', async (req, res) => {
     const { username } = req.body;
-
-    const check = await connection.select('*').from('users').where('username', username);
+    const check = await connection('users').select('*');    
     return res.json({check});
 });
 
@@ -52,6 +51,20 @@ routes.post('/users/register', async (req, res)  => {
         });
 
         return res.status(200).send("User created.");
+});
+
+routes.delete('/users/delete', async (req, res)  => {
+    const {
+        loggedUser,
+        username,
+        permissions
+    } = req.headers;
+    if(permissions !== 'admin' && loggedUser!=username){
+        return res.status(401).send("You cannot delete this account.");
+    }
+    await connection.from('users').where('username', username).delete();
+
+    return res.status(200).send("User deleted.");
 });
 
 
