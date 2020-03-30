@@ -1,6 +1,6 @@
 # judge-dev
 
-### Install
+# Install
 ```
 git clone https://github.com/lawrencefmm/judge-dev.git
 cd /judge-dev/backend/
