@@ -2,10 +2,12 @@ const crypto = require('crypto');
 const connection = require('../database/connection');
 
 module.exports = {
+
+    // List users
     async list(req, res) {
 
         const { page = 1 } = req.query;
-
+        // List 20 users every page
         const check = await connection('users')
             .limit(20)
             .offset((page - 1) * 20)
@@ -14,6 +16,7 @@ module.exports = {
         return res.json(check);
     },
 
+    // Register user
     async register(req, res) {
 
         const {
@@ -30,13 +33,12 @@ module.exports = {
         } = req.body;
 
         // Check if a user with that username or email exists
-
         const check = await connection('users').where({
             username: `${username}`,
             email: `${email}`,
-            }).select('*');
+            }).select('username', 'email').first();
 
-        if(check.length) {
+        if(check) {
             return res.status(400).send("User already exists");
         }
 
@@ -67,7 +69,7 @@ module.exports = {
         const {
             loggedUser,
             username,
-            permissions
+            permissions // Mudar depois para recuperar esse valor pela database
         } = req.headers;
 
         if(permissions !== 'admin' || loggedUser != username){
