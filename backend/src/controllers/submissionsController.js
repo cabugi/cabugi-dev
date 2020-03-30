@@ -2,11 +2,11 @@ const connection = require('../database/connection');
 
 module.exports = {
     
-    // List users
+    // List submissions
     async list(req, res) {
 
         const { page = 1 } = req.query;
-        // List 10 users every page
+        // List 10 submissions every page
         const check = await connection('submissions')
             .limit(10)
             .offset((page - 1) * 20)
