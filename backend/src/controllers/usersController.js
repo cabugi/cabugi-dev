@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-const express = require('express');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -31,6 +30,7 @@ module.exports = {
         } = req.body;
 
         // Check if a user with that username or email exists
+
         const check = await connection('users').where({
             username: `${username}`,
             email: `${email}`,
