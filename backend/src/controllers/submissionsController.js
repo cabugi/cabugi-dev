@@ -3,33 +3,24 @@ const judge = require('../judge/judge')
 const fs = require('fs')
 
 module.exports = {
-    
+
     // List submissions
     async list(req, res) {
 
-        const { page = 1 } = req.query;
-        // List 10 submissions every page
-        const check = await connection('submissions')
-            .limit(10)
-            .offset((page - 1) * 10)
-            .select('*');
-
-        return res.json(check);
-    },
-
-    async listByUser(req, res) {
-        const {username} = req.headers;
-        const { page = 1 } = req.query;
+        const {
+            user = true,
+            page = 1 
+        } = req.query;
+        var username = user === true ? user : "username";
         // List 10 submissions every page
         const check = await connection('submissions')
             .limit(10)
             .offset((page - 1) * 10)
             .select('*')
-            .where('username', username);
-
+            .where(username, user);
         return res.json(check);
     },
-        
+
     // Delete submissions
     async delete(req, res) {
 
