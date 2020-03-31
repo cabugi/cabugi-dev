@@ -11,12 +11,25 @@ module.exports = {
         // List 10 submissions every page
         const check = await connection('submissions')
             .limit(10)
-            .offset((page - 1) * 20)
+            .offset((page - 1) * 10)
             .select('*');
 
         return res.json(check);
     },
 
+    async listByUser(req, res) {
+        const {username} = req.headers;
+        const { page = 1 } = req.query;
+        // List 10 submissions every page
+        const check = await connection('submissions')
+            .limit(10)
+            .offset((page - 1) * 10)
+            .select('*')
+            .where('username', username);
+
+        return res.json(check);
+    },
+        
     // Delete submissions
     async delete(req, res) {
 
@@ -37,7 +50,7 @@ module.exports = {
         return res.status(200).send("Submission deleted.");
     },
 
-    // Send submissions
+        // Send submissions
     async send(req, res) {
         const body = req.body;
 

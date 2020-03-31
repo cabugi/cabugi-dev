@@ -6,13 +6,15 @@ module.exports = {
     // List users
     async list(req, res) {
 
-        const { page = 1 } = req.query;
+        const {
+            page = 1 
+        } = req.query;
+
         // List 20 users every page
         const check = await connection('users')
             .limit(20)
             .offset((page - 1) * 20)
             .select('*');
-
         return res.json(check);
     },
 
@@ -33,10 +35,10 @@ module.exports = {
         } = req.body;
 
         // Check if a user with that username or email exists
-        const check = await connection('users').where({
-            username: `${username}`,
-            email: `${email}`,
-            }).select('username', 'email').first();
+        const check = await connection('users')
+            .where('username', username)
+            .orWhere("email", email)
+            .select('*').first();
 
         if(check) {
             return res.status(400).send("User already exists");
