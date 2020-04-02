@@ -1,6 +1,19 @@
 const connection = require('../database/connection');
 
 module.exports = {
+    async list(req, res) {
+
+        const {
+            page = 1 
+        } = req.query;
+
+        const problems = await connection('problems')
+        .limit(10)
+        .offset((page-1)*10)
+        .select('*')
+
+        return res.json(problems);
+    },
 
     async create(req, res) {
 
