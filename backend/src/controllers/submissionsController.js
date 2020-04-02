@@ -3,17 +3,21 @@ const judge = require('../judge/judge')
 const fs = require('fs')
 
 module.exports = {
-    
+
     // List submissions
     async list(req, res) {
 
-        const { page = 1 } = req.query;
+        const {
+            user = true,
+            page = 1 
+        } = req.query;
+        var username = user === true ? user : "username";
         // List 10 submissions every page
         const check = await connection('submissions')
             .limit(10)
-            .offset((page - 1) * 20)
-            .select('*');
-
+            .offset((page - 1) * 10)
+            .select('*')
+            .where(username, user);
         return res.json(check);
     },
 
@@ -37,7 +41,7 @@ module.exports = {
         return res.status(200).send("Submission deleted.");
     },
 
-    // Send submissions
+        // Send submissions
     async send(req, res) {
         const body = req.body;
 
