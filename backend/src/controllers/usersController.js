@@ -1,5 +1,6 @@
 const crypto = require('crypto');
 const connection = require('../database/connection');
+const bcrypt = require('bcrypt')
 
 module.exports = {
 
@@ -46,19 +47,21 @@ module.exports = {
         const id = await crypto.randomBytes(4).toString('HEX');
         const permissions = 'user';
 
-        await connection('users').insert({
-            id,
-            username,
-            name,
-            email,
-            password,
-            country,
-            state,
-            city,
-            school_org,
-            birthday,
-            permissions,
-            contact
+        bcrypt.hash(password, 10, async function(err, hash) {
+            await connection('users').insert({
+                id,
+                username,
+                name,
+                email,
+                "password": hash,
+                country,
+                state,
+                city,
+                school_org,
+                birthday,
+                permissions,
+                contact
+            });
         });
 
         return res.status(201).send("User created.");

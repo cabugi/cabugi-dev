@@ -1,19 +1,22 @@
 const connection = require('../database/connection');
+const bcrypt = require('bcrypt');
 
 module.exports = {
 
 	async check(req, res) {
 
-		const { username, password} = req.body;
+		const { username, password } = req.body;
 
-		const checkUser = await connection('users').where({
+		let hash = bcrypt.hashSync(password, 10);
+
+		const db_json = await connection('users').where({
 				username: `${username}`,
-				password: `${password}`
-			}).select('username', 'password').first();
-
-		if(!checkUser) {
-			return res.status(404).send("Wrong username or password");
+			}).select('password').first();
+		
+		if( db_json !== undefined && !bcrypt.compareSync(hash, db_json['password']) ) {
+			return res.status(200).send("User found");
 		}
-		return res.status(200).send("User found");
+
+		return res.status(404).send("Wrong username or password");
 	}
 }
