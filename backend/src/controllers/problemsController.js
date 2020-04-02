@@ -4,6 +4,7 @@ module.exports = {
     async list(req, res) {
 
         const {
+            title = '',
             page = 1 
         } = req.query;
 
@@ -11,6 +12,7 @@ module.exports = {
         .limit(10)
         .offset((page-1)*10)
         .select('*')
+        .where("title", 'like', '%'+title+'%');
 
         return res.json(problems);
     },
