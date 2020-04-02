@@ -3,9 +3,8 @@ exports.up = function(knex) {
     return knex.schema.createTable('problems', function (table) {
         table.increments();
         table.string('user_id').notNullable(); // Mod that created the problem.
-        table.boolean('from_NOIC').notNullable();
-        table.foreign('user_id').references('id').inTable('users');
-        table.foreign('from_NOIC').references('NOIC').inTable('users');
+        table.string('title').notNullable();
+        table.foreign('user_id').references('id').inTable('users')
         table.timestamps(); 
       });
 };
