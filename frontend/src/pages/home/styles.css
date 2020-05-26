@@ -6,9 +6,10 @@
     min-height:680px;
     width: 100%;
     background-size: cover;
-    display: inline-block;
     background-image: url("image4.jpg");
+    background-repeat: no-repeat;
     filter: blur(0.5px);
+    margin: 0;
 }
 
 .clean-block.clean-hero .text {
