@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './global.css';
-import RegForm from './pages/register'
+
+import Routes from "./routes.js";
+
 ReactDOM.render(
   <React.StrictMode>
-    <RegForm />
+    <Routes />
   </React.StrictMode>,
   document.getElementById('root')
 );
