@@ -3,7 +3,7 @@ import './styles.css';
 
 export default function Navbar(){
     return(
-    <navbar>
+    <navbar className="Navbar">
         <h1>LOGO</h1>
         <nav>
             <ul className="nav_links">
@@ -14,7 +14,7 @@ export default function Navbar(){
                 <li><a href="#"> Sobre </a></li>
             </ul>
         </nav>
-        <a href="#" className="register"><button>Registre-se</button></a>
+        <a href="#" className="register-button"><button>Registre-se</button></a>
     </navbar>
     );
 }

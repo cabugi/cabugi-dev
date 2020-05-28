@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-navbar {
+.Navbar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -15,49 +6,49 @@ navbar {
     padding: 0.2em 3%;
 }
 
-h1{
+.Navbar h1{
     color: whitesmoke;
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     cursor: pointer;
 }
 
-button, li, a{
-    font-family: "Poppins", sans-serif;
+.Navbar button, li, a{
+    font-family: "Roboto", sans-serif;
     color: whitesmoke;
     text-decoration: none;
 }
 
-a{
+.Navbar a{
     font-size: 1.15em;
     font-weight: 400;
 }
 
-button{
+.Navbar button{
     font-size: 1em;
     font-weight: 500;
 }
 
-.nav_links{
+.Navbar .nav_links{
     margin-left: 1em;
 }
-.nav_links li{
+.Navbar .nav_links li{
     list-style: none;
     display: inline-block;
     padding: 0px 1em;
 }
-.nav_links li a{
+.Navbar .nav_links li a{
     transition: all 0.25s ease 0.0s;
 }
-.nav_links li a:hover{
+.Navbar .nav_links li a:hover{
     color: darkgray;
 }
 
-.register{
+.register-button{
     margin-left: auto;
 }
 
-button {
+.register-button button {
     display: inline-block;
     padding: 0.25em 0.35em;
     color: snow;
@@ -67,7 +58,7 @@ button {
     cursor: pointer;
     transition: all 0.25s ease 0.0s;
 }
-button:hover{
+.register-button button:hover{
     background-color: rgba(136, 96, 131, 0.7);
 }
 
