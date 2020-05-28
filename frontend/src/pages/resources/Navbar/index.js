@@ -5,7 +5,7 @@ import './styles.css';
 export default function Navbar(){
     return(
     <navbar className="Navbar">
-        <h1>LOGO</h1>
+        <h1><Link to= "/" className="LOGO">LOGO</Link></h1>
         <nav>
             <ul className="nav_links">
                 <li><a href="#"> Problemas</a></li>

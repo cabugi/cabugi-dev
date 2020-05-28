@@ -10,6 +10,7 @@
     color: whitesmoke;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
+    font-size: 2em;
     cursor: pointer;
 }
 
@@ -19,7 +20,7 @@
     text-decoration: none;
 }
 
-.Navbar a{
+.nav_links a{
     font-size: 1.15em;
     font-weight: 400;
 }
