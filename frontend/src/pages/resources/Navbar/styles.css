@@ -20,7 +20,7 @@
     text-decoration: none;
 }
 
-.nav_links a{
+.nav_links a, .Login{
     font-size: 1.15em;
     font-weight: 400;
 }
@@ -33,21 +33,22 @@
 .Navbar .nav_links{
     margin-left: 1em;
 }
-.Navbar .nav_links li{
+.Navbar .nav_links li, .Login{
     list-style: none;
     display: inline-block;
     padding: 0px 1em;
 }
-.Navbar .nav_links li a{
+.Navbar .nav_links li a, .Login{
     transition: all 0.25s ease 0.0s;
 }
-.Navbar .nav_links li a:hover{
+.Navbar .nav_links li a:hover, .Account a:hover {
     color: darkgray;
 }
 
-.register-button{
+.Account{
     margin-left: auto;
 }
+
 
 .register-button button {
     display: inline-block;

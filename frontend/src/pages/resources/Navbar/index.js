@@ -15,7 +15,10 @@ export default function Navbar(){
                 <li><a href="#"> Sobre </a></li>
             </ul>
         </nav>
-        <Link to="/register" className="register-button"><button>Registre-se</button></Link>
+        <account className="Account">
+            <a href="#" className="Login"> Entrar </a>
+            <Link to="/register" className="register-button"><button>Registre-se</button></Link>
+        </account>
     </navbar>
     );
 }
