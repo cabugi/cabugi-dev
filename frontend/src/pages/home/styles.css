@@ -2,6 +2,7 @@
     position: relative;
     text-align: center;
 }
+
 .background-image {
     min-height:680px;
     width: 100%;
@@ -9,17 +10,14 @@
     background-image: url("image4.jpg");
     background-repeat: no-repeat;
     filter: blur(0.5px);
-    margin: 0;
 }
 
 .clean-block.clean-hero .text {
-    font-family: Roboto, sans-serif;
     box-sizing: border-box;
     font-size: 1.3rem;
     font-weight: 500;
 	color: #fff;
     text-shadow: 1px 1px 1px rgba(0,0,0,.85);
-    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,7 +26,6 @@
 
 .button {
     background-color: transparent;
-    font-family: Roboto, sans-serif;
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0,0,0,.85); 
     padding: .5rem 1rem;
