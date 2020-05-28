@@ -8,15 +8,15 @@ export default function Navbar(){
         <h1><Link to= "/" className="LOGO">LOGO</Link></h1>
         <nav>
             <ul className="nav_links">
-                <li><a href="#"> Problemas</a></li>
-                <li><a href="#"> Contests </a></li>
-                <li><a href="#"> Perfil </a></li>
-                <li><a href="#"> Rankings </a></li>
-                <li><a href="#"> Sobre </a></li>
+                <li><Link to="/"> Problemas</Link></li>
+                <li><Link to="/"> Contests </Link></li>
+                <li><Link to="/"> Perfil </Link></li>
+                <li><Link to="/"> Rankings </Link></li>
+                <li><Link to="/"> Sobre </Link></li>
             </ul>
         </nav>
         <account className="Account">
-            <a href="#" className="Login"> Entrar </a>
+            <Link to="/" className="Login"> Sobre </Link>
             <Link to="/register" className="register-button"><button>Registre-se</button></Link>
         </account>
     </navbar>
