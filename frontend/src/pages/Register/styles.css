@@ -32,14 +32,14 @@
     margin: 3px;
 }
 
-.register-form input {
+.register-form input{
     margin-bottom: 15px;
     width: 100%;
     max-width: 400px;
     font: 14px
 }
 
-.register-form .inputData .submit-button {
+.register-form .inputData .submit-button{
     width: 100%;
     line-height: 35px;
     background-color: #4f3466;

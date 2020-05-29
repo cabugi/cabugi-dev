@@ -6,7 +6,7 @@
     /* border: 4px dotted blue; */
 
 }
-.register-form {
+.login-form {
     width: 400px;
     margin: 120px;
     padding: 40px 40px;
@@ -20,26 +20,26 @@
 }
 
 
-.register-form h1 {
+.login-form h1 {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 36px;
 }
 
-.inputData label{
+.loginData label{
     display: flex;
     font-weight: 700;
     margin: 3px;
 }
 
-.register-form input {
+.login-form input {
     margin-bottom: 15px;
     width: 100%;
     max-width: 400px;
     font: 14px
 }
 
-.register-form .inputData .submit-button {
+.login-form .loginData .login-button {
     width: 100%;
     line-height: 35px;
     background-color: #4f3466;
@@ -49,7 +49,7 @@
     transition: 0.2s;
     filter: brightness(120%);
 }
-.register-form .inputData .submit-button:hover {
+.login-form .loginData .login-button:hover {
     filter: brightness(100%);
 }
 

@@ -7,15 +7,15 @@ export default function LoginForm() {
         <div className="logform">
             <Navbar />
 
-            <form className="register-form" action="localhost:2999/register" method="post">
+            <form className="login-form" action="localhost:2999/login" method="post">
                 <h1>Entrar</h1>
 
-                <div className="inputData"> 
+                <div className="loginData"> 
                     <label for="name">Nome de usuário/Email</label>
-                    <input className="username"></input>
+                    <input className="log-username"></input>
                     <label for="name">Senha</label>
-                    <input className="password" type="password"></input>
-                    <button className="submit-button" type="submit">Entrar</button>
+                    <input className="log-password" type="password"></input>
+                    <button className="login-button" type="submit">Entrar</button>
                 </div>
             </form>
         </div>
