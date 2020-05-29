@@ -16,7 +16,7 @@ export default function Navbar(){
             </ul>
         </nav>
         <account className="Account">
-            <Link to="/" className="Login"> Entrar </Link>
+            <Link to="/login" className="Login"> Entrar </Link>
             <Link to="/register" className="register-button"><button>Registre-se</button></Link>
         </account>
     </navbar>
