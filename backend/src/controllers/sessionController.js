@@ -17,6 +17,6 @@ module.exports = {
 			return res.status(200).send("User found");
 		}
 
-		return res.status(404).send("Wrong username or password");
+		return res.status(401).send("Wrong username or password");
 	}
 }
