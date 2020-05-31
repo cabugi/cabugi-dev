@@ -49,7 +49,7 @@ module.exports = {
         const id = await crypto.randomBytes(4).toString('HEX');
         const permissions = 'user';
 
-        bcrypt.hash(password, 10, async function(err, hash) {
+        bcrypt.hash(password, 10, async function(err, hash)  {
             await connection('users').insert({
                 id,
                 username,

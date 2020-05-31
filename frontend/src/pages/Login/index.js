@@ -7,7 +7,7 @@ export default function LoginForm() {
         <div className="logform">
             <Navbar />
 
-            <form className="login-form" action="localhost:2999/login" method="post">
+            <form className="login-form">
                 <h1>Entrar</h1>
 
                 <div className="loginData"> 
