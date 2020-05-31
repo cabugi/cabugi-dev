@@ -28,16 +28,9 @@ export default function RegisterForm() {
         };
 
         try {
-            const res = await api.post('/users', {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                },
-                
-                userData,
-                
-            });
+            const res = await api.post('/users', userData);
 
-            alert(res);
+            console.log(res);
         } catch(err)
         {
             console.log(err);
@@ -73,6 +66,7 @@ export default function RegisterForm() {
                     />
                     <label>Senha</label>
                     <input 
+                        type="password"
                         placeholder="Pelo menos 6 caracteres"
                         value={password}
                         onChange={ e => setPassword(e.target.value) }
