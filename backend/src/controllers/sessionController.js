@@ -7,11 +7,14 @@ module.exports = {
 
 		const { username, email, password } = req.body;
 
+		username = "";
+		email = "";
+
 		let hash = bcrypt.hashSync(password, 10);
 
 		const db_json = await connection('users').where({
 				username: `${username}`,
-			}).orWhere("email", email).(.select('password').first();
+			}).orWhere("email", email).select('password').first();
 		
 		if( db_json !== undefined && !bcrypt.compareSync(hash, db_json['password']) ) {
 			return res.status(200).send("User found");

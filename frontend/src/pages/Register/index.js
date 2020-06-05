@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from "../resources/Navbar"
 import "./styles.css"
 
-import api from '../../Api/api';
+import api from '../../Api';
 
 export default function RegisterForm() {
 
@@ -30,10 +30,10 @@ export default function RegisterForm() {
         try {
             const res = await api.post('/users', userData);
 
-            console.log(res);
+            alert('Usuario cadastrado com sucesso!');
         } catch(err)
         {
-            console.log(err);
+            alert('Algum erro ocorreu durante o cadastro. Tente novamente.');
         }
     }
 
@@ -51,18 +51,22 @@ export default function RegisterForm() {
                         placeholder="Nome"
                         value={name}
                         onChange={ e => setName(e.target.value) }
+                        required
                     />
                     <label>Nome de usuário</label>
                     <input
                         placeholder="Nome de usuário"
                         value={username}
                         onChange={ e => setUsername(e.target.value) }
+                        required
                     />
                     <label>Email</label>
                     <input
+                        type="email"
                         placeholder="Email"
                         value={email}
                         onChange={ e => setEmail(e.target.value) }
+                        required
                     />
                     <label>Senha</label>
                     <input 
@@ -70,6 +74,8 @@ export default function RegisterForm() {
                         placeholder="Pelo menos 6 caracteres"
                         value={password}
                         onChange={ e => setPassword(e.target.value) }
+                        required
+                        minLength="6"
                     />
                     <button className="submit-button" type="submit">Cadastrar</button>
                 </div>
