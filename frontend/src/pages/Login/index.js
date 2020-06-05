@@ -15,7 +15,7 @@ export default function LoginForm() {
         try {
             const response = await api.post('/users/login', {user, password});
 
-            console.log(response);
+            console.log(response.data);
         } catch(err) {
             console.log(err);
             alert("deu erro viu");
