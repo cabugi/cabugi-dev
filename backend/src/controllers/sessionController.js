@@ -8,25 +8,26 @@ module.exports = {
 
 		const { user, password } = req.body;
 
-		let hash = bcrypt.hashSync(password, 10);
-
 		// DB query
-		const db_json = await connection('users').where({
-				username: `${user}`,
-			}).orWhere("email", user).select('password').first();
-		
+		const databasePassword = await connection('users').where({
+			username: `${user}`,
+		}).orWhere("email", user).select('password').first();
+
 		// Check if user exists
-		if( db_json === undefined && bcrypt.compareSync(hash, db_json['password']) ) {
-			console.log("opa")
-			return res.status(401).send("Wrong username or password");
+		if(databasePassword === undefined || (await bcrypt.compare(password, databasePassword['password']) == false)) {
+			return res.status(401).send({message: "Wrong username or password"});
 		}
+
+		const userId = await connection('users')
+			.where('username', user)
+			.orWhere('email', user)
+			.select('id')
+			.first();
 		
 		// Generate token for session
 		// change secret key later
-		jwt.sign({user: user}, 'senhafoda', (err, token) => {
-			return res.send({
-				token: token
-			});
+		await jwt.sign({userId}, 'senhafoda', {expiresIn: '1h'}, (err, token) => {
+			return res.status(200).send({auth: true, token});
 		});
 	}
 }
