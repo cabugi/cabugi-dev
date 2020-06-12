@@ -2,13 +2,21 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: #4f3466;
+    background: #ffffff;
     padding: 0.2em 3%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Navbar .LOGO img{
+    height: 50px;
+    width: auto;
 }
 
 .Navbar h1{
-    color: whitesmoke;
+    color: black;
     font-family: "Roboto", sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.85);
     font-weight: 700;
     font-size: 2em;
     cursor: pointer;
@@ -16,7 +24,8 @@
 
 .Navbar button, li, a{
     font-family: "Roboto", sans-serif;
-    color: whitesmoke;
+    color: black;
+    font-size: 17px;
     text-decoration: none;
 }
 
@@ -52,16 +61,14 @@
 
 .register-button button {
     display: inline-block;
-    padding: 0.25em 0.35em;
+    padding: 0.55em 0.65em;
     color: snow;
-    background-color: rgb(136, 96, 131);
+    background-color: #00B03F;
     border: none;
     border-radius: 1.5em;
     cursor: pointer;
     transition: all 0.25s ease 0.0s;
 }
 .register-button button:hover{
-    background-color: rgba(136, 96, 131, 0.7);
+    background-color: #006925;
 }
-
-

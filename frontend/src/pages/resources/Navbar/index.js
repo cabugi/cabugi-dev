@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './styles.css';
+import logo from '../logo/logo.svg';
 
 export default function Navbar(){
     return(
     <navbar className="Navbar">
-        <h1><Link to= "/" className="LOGO">LOGO</Link></h1>
+        <h1><Link to= "/" className="LOGO"><img src={logo} alt="" /></Link></h1>
         <nav>
             <ul className="nav_links">
                 <li><Link to="/"> Problemas</Link></li>
