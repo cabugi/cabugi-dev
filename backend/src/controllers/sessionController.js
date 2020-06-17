@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
 
-	async check(req, res) {
+	async login(req, res) {
 
 		const { user, password } = req.body;
 
@@ -14,8 +14,8 @@ module.exports = {
 		}).orWhere("email", user).select('password').first();
 
 		// Check if user exists
-		if(databasePassword === undefined || (await bcrypt.compare(password, databasePassword['password']) == false)) {
-			return res.status(401).send({message: "Wrong username or password"});
+		if (databasePassword === undefined || (await bcrypt.compare(password, databasePassword['password']) == false)) {
+			return res.status(401).send({ message: "Wrong username or password" });
 		}
 
 		const userId = await connection('users')
@@ -23,11 +23,22 @@ module.exports = {
 			.orWhere('email', user)
 			.select('id')
 			.first();
-		
+
 		// Generate token for session
 		// change secret key later
-		await jwt.sign({userId}, 'senhafoda', {expiresIn: '1h'}, (err, token) => {
-			return res.status(200).send({auth: true, token});
+		await jwt.sign({ userId }, 'senhafoda', { expiresIn: '1d' }, (err, token) => {
+			return res.status(200).send({ auth: true, token });
 		});
+	},
+
+	async verifyJWT(req, res, next) {
+		const token = req.headers['x-acess-token'];
+
+		jwt.verify(token, 'senhafoda', (err, decoded) => {
+			if (err) return res.status(401).send({ message: "Unauthorized" });
+		})
+
+		next();
 	}
+
 }
