@@ -5,8 +5,8 @@ import Navbar from '../resources/Navbar/index'
 export default function Home() {
 
     return (
-        <div className="Home">     
-            <Navbar />       
+        <div className="Home">
+            <Navbar />
             <div className="background-image" ></div>
             <div className="clean-block clean-hero">
                 <div className="text">

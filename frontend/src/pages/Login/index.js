@@ -13,10 +13,10 @@ export default function LoginForm() {
         e.preventDefault();
 
         try {
-            const response = await api.post('/users/login', {user, password});
+            const response = await api.post('/users/login', { user, password });
 
             console.log(response.data);
-        } catch(err) {
+        } catch (err) {
             console.log(err);
             alert("deu erro viu");
         }
@@ -29,21 +29,21 @@ export default function LoginForm() {
             <form className="login-form" onSubmit={handleLogin}>
                 <h1>Entrar</h1>
 
-                <div className="loginData"> 
+                <div className="loginData">
                     <label for="name">Nome de usuário/Email</label>
-                    <input 
+                    <input
                         value={user}
-                        onChange={ e => setUser(e.target.value) }
+                        onChange={e => setUser(e.target.value)}
                         required
                     />
 
                     <label for="name">Senha</label>
                     <input
-                        type="password" 
+                        type="password"
                         value={password}
-                        onChange={ e => setPassword(e.target.value) }
+                        onChange={e => setPassword(e.target.value)}
                         required
-                    />                    
+                    />
                     <button className="login-button" type="submit">Entrar</button>
                 </div>
             </form>

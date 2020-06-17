@@ -8,7 +8,7 @@ module.exports = {
     async list(req, res) {
 
         const {
-            page = 1 
+            page = 1
         } = req.query;
 
         // List 20 users every page
@@ -41,7 +41,7 @@ module.exports = {
             .orWhere("email", email)
             .select('*').first();
 
-        if(check) {
+        if (check) {
             return res.status(400).send("User already exists");
         }
 
@@ -49,7 +49,7 @@ module.exports = {
         const id = await crypto.randomBytes(4).toString('HEX');
         const permissions = 'user';
 
-        bcrypt.hash(password, 10, async function(err, hash)  {
+        bcrypt.hash(password, 10, async function (err, hash) {
             await connection('users').insert({
                 id,
                 username,
@@ -77,7 +77,7 @@ module.exports = {
             permissions // Mudar depois para recuperar esse valor pela database
         } = req.headers;
 
-        if(permissions !== 'admin' || loggedUser != username){
+        if (permissions !== 'admin' || loggedUser != username) {
             return res.status(401).send("You cannot delete this account.");
         }
 

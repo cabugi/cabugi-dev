@@ -31,8 +31,7 @@ export default function RegisterForm() {
             const res = await api.post('/users', userData);
 
             alert('Usuario cadastrado com sucesso!');
-        } catch(err)
-        {
+        } catch (err) {
             alert('Algum erro ocorreu durante o cadastro. Tente novamente.');
         }
     }
@@ -44,20 +43,20 @@ export default function RegisterForm() {
             <form className="register-form" onSubmit={HandleRegister}>
                 <h1>Criar conta</h1>
 
-                <div className="inputData"> 
+                <div className="inputData">
 
                     <label>Nome</label>
-                    <input 
+                    <input
                         placeholder="Nome"
                         value={name}
-                        onChange={ e => setName(e.target.value) }
+                        onChange={e => setName(e.target.value)}
                         required
                     />
                     <label>Nome de usuário</label>
                     <input
                         placeholder="Nome de usuário"
                         value={username}
-                        onChange={ e => setUsername(e.target.value) }
+                        onChange={e => setUsername(e.target.value)}
                         required
                     />
                     <label>Email</label>
@@ -65,15 +64,15 @@ export default function RegisterForm() {
                         type="email"
                         placeholder="Email"
                         value={email}
-                        onChange={ e => setEmail(e.target.value) }
+                        onChange={e => setEmail(e.target.value)}
                         required
                     />
                     <label>Senha</label>
-                    <input 
+                    <input
                         type="password"
                         placeholder="Pelo menos 6 caracteres"
                         value={password}
-                        onChange={ e => setPassword(e.target.value) }
+                        onChange={e => setPassword(e.target.value)}
                         required
                         minLength="6"
                     />

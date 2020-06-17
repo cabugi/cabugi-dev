@@ -9,7 +9,7 @@ routes.get('/users', usersController.list);
 routes.post('/users', usersController.register);
 routes.delete('/users', usersController.delete);
 
-routes.post('/users/login', sessionController.check);
+routes.post('/users/login', sessionController.login);
 
 routes.get('/submissions', submissionsController.list);
 routes.post('/submissions', submissionsController.send);
@@ -18,6 +18,11 @@ routes.delete('/submissions', submissionsController.delete);
 
 routes.post('/problems', problemsController.create);
 routes.get('/problems', problemsController.list);
+
+
+routes.get('/', sessionController.verifyJWT, (req, res) => {
+    return res.send({ message: "Ola" });
+});
 
 module.exports = routes;
 
