@@ -15,15 +15,16 @@
     align-items: center;
     align-self: center;
     justify-content: center;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
 }
 
 
 .login-form h1 {
     margin-bottom: 20px;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .loginData label{
@@ -36,20 +37,21 @@
     margin-bottom: 15px;
     width: 100%;
     max-width: 400px;
-    font: 14px
+    line-height: 55px;
+    font-size: 17px;
 }
 
 .login-form .loginData .login-button {
     width: 100%;
-    line-height: 35px;
-    background-color: #4f3466;
+    font-size: 17px;
+    line-height: 55px;
+    background-color: #3250d1;
     color: #ffffff;
     border: 1px solid #717175;
     border-radius: 0.25em;
     transition: 0.2s;
-    filter: brightness(120%);
 }
 .login-form .loginData .login-button:hover {
-    filter: brightness(100%);
+    background-color: #1d3cbd;
 }
 

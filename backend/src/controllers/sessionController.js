@@ -26,16 +26,16 @@ module.exports = {
 
 		// Generate token for session
 		// change secret key later
-		await jwt.sign({ userId }, 'senhafoda', { expiresIn: '1d' }, (err, token) => {
+		await jwt.sign({ userId }, 'senhafoda', { expiresIn: '30' }, (err, token) => {
 			return res.status(200).send({ auth: true, token });
 		});
 	},
 
-	async verifyJWT(req, res, next) {
+	async verifyToken(req, res, next) {
 		const token = req.headers['x-acess-token'];
 
 		jwt.verify(token, 'senhafoda', (err, decoded) => {
-			if (err) return res.status(401).send({ message: "Unauthorized" });
+			if (err) return res.status(401).send({ message: "Unauthorized" }``);
 		})
 
 		next();

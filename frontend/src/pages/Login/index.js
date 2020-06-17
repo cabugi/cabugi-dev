@@ -27,26 +27,28 @@ export default function LoginForm() {
             <Navbar />
 
             <form className="login-form" onSubmit={handleLogin}>
-                <h1>Entrar</h1>
 
                 <div className="loginData">
-                    <label for="name">Nome de usuário/Email</label>
+                    <h1>Entrar</h1>
+
                     <input
                         value={user}
                         onChange={e => setUser(e.target.value)}
+                        placeholder="Nome ou email"
                         required
                     />
 
-                    <label for="name">Senha</label>
                     <input
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
+                        placeholder="Senha"
                         required
                     />
                     <button className="login-button" type="submit">Entrar</button>
                 </div>
             </form>
+
         </div>
     );
 }

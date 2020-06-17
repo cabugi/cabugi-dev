@@ -29,7 +29,7 @@ export default function RegisterForm() {
 
         try {
             const res = await api.post('/users', userData);
-
+            console.log(res);
             alert('Usuario cadastrado com sucesso!');
         } catch (err) {
             alert('Algum erro ocorreu durante o cadastro. Tente novamente.');
@@ -45,21 +45,18 @@ export default function RegisterForm() {
 
                 <div className="inputData">
 
-                    <label>Nome</label>
                     <input
                         placeholder="Nome"
                         value={name}
                         onChange={e => setName(e.target.value)}
                         required
                     />
-                    <label>Nome de usuário</label>
                     <input
                         placeholder="Nome de usuário"
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                         required
                     />
-                    <label>Email</label>
                     <input
                         type="email"
                         placeholder="Email"
@@ -67,7 +64,6 @@ export default function RegisterForm() {
                         onChange={e => setEmail(e.target.value)}
                         required
                     />
-                    <label>Senha</label>
                     <input
                         type="password"
                         placeholder="Pelo menos 6 caracteres"

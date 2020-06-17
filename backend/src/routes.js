@@ -20,7 +20,7 @@ routes.post('/problems', problemsController.create);
 routes.get('/problems', problemsController.list);
 
 
-routes.get('/', sessionController.verifyJWT, (req, res) => {
+routes.get('/', sessionController.verifyToken, (req, res) => {
     return res.send({ message: "Ola" });
 });
 
