@@ -9,7 +9,7 @@
 .login-form {
     width: 400px;
     margin: 120px;
-    padding: 40px 40px;
+    padding: 40px 0px 40px 0px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -27,10 +27,11 @@
     text-align: center;
 }
 
-.loginData label{
+.loginData {
+    width: 80%;
     display: flex;
-    font-weight: 700;
-    margin: 3px;
+    justify-content: center;
+    flex-flow: column;
 }
 
 .login-form input {
