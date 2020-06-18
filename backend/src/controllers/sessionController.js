@@ -34,8 +34,8 @@ module.exports = {
 	async verifyToken(req, res, next) {
 		const token = req.headers['x-acess-token'];
 
-		jwt.verify(token, 'senhafoda', (err, decoded) => {
-			if (err) return res.status(401).send({ message: "Unauthorized" }``);
+		await jwt.verify(token, 'senhafoda', (err, decoded) => {
+			if (err) return res.status(401).send({ message: "Unauthorized", "error": err });
 		})
 
 		next();
