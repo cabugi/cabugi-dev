@@ -12,7 +12,7 @@ export default function Navbar() {
                     <li><Link to="/"> Problemas</Link></li>
                     <li><Link to="/"> Contests </Link></li>
                     <li><Link to="/"> Perfil </Link></li>
-                    <li><Link to="/"> Rankings </Link></li>
+                    <li><Link to="/ranking"> Rankings </Link></li>
                     <li><Link to="/"> Sobre </Link></li>
                 </ul>
             </nav>

@@ -1,0 +1,34 @@
+users{
+    display: flex;
+    flex-flow: column;
+    background: #f0f0f0;
+    border: solid rgba(0,0,0,1  ) 1px;
+    padding: 2em 10%;
+}
+
+.rankingTable{
+    border-collapse: collapse;
+    margin: auto;
+    justify-content: center;
+    font-size: 1.5em;
+    min-width: 50em;
+    border-radius: 0.5em 0.5em 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 1.2em rgba(0, 176, 63, 0.15);
+}
+
+.rankingTable thead tr{
+    background-color: #008730;
+    color: white;
+    font-weight: 600; 
+    text-align: left;
+}
+.rankingTable th, td{
+    padding: 12px 15px;
+}
+
+.rankingTable tr{
+    border-bottom: 0.1em solid #008730;
+}
+
+
