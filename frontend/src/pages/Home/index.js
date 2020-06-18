@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import backgroundImage from "./wfh_1.svg"
 import Navbar from '../resources/Navbar/index'
 import "./Lottie"
 import LottieControl from './Lottie';
