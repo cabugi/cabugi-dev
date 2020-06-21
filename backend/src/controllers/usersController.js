@@ -10,12 +10,15 @@ module.exports = {
         const {
             page = 1
         } = req.query;
-
         // List 20 users every page
         const check = await connection('users')
             .limit(20)
             .offset((page - 1) * 20)
             .select('*');
+        
+        check.sort(function(a, b) {
+            return b["score"] - a["score"];
+        });
         return res.json(check);
     },
 
