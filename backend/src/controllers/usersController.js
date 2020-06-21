@@ -11,15 +11,13 @@ module.exports = {
             page = 1
         } = req.query;
         // List 20 users every page
-        const check = await connection('users')
+        const rankUsers = await connection('users')
             .limit(20)
             .offset((page - 1) * 20)
-            .select('*');
+            .select('*')
+            .orderBy('score', 'desc');
         
-        check.sort(function(a, b) {
-            return b["score"] - a["score"];
-        });
-        return res.json(check);
+        return res.json(rankUsers);
     },
 
     // Register user
