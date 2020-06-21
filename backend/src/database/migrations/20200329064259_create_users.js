@@ -2,6 +2,7 @@
 exports.up = function(knex) {
     return knex.schema.createTable('users', function (table) {
         table.string('id').primary();
+        table.integer('score').defaultTo(0);
         table.string('username').notNullable();
         table.string('name').notNullable();
         table.string('email').notNullable();
