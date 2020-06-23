@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import Cookies from 'js-cookie'
 import Navbar from "../resources/Navbar"
 import "./styles.css"
 import api from "../../Api"
-
 
 export default function LoginForm() {
 
@@ -13,9 +13,14 @@ export default function LoginForm() {
         e.preventDefault();
 
         try {
-            const response = await api.post('/users/login', { user, password });
+            const response = await api.post('/users/login', { user, password });            
 
-            console.log(response.data);
+            Cookies.set('session-token', response.data['token'], {
+                path: "/",
+            });
+        
+            console.log(Cookies.get('session-token'));
+            
         } catch (err) {
             console.log(err);
             alert("deu erro viu");

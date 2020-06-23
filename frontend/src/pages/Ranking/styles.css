@@ -2,11 +2,12 @@ users{
     display: flex;
     flex-flow: column;
     background: #f0f0f0;
-    border: solid rgba(0,0,0,1  ) 1px;
+    border: dotted blue 5px;
     padding: 2em 10%;
 }
 
 .rankingTable{
+    border: dotted red 5px;
     border-collapse: collapse;
     margin: auto;
     justify-content: center;
