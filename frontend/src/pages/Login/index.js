@@ -36,20 +36,27 @@ export default function LoginForm() {
                 <div className="loginData">
                     <h1>Entrar</h1>
 
+                    <floatLabel className = "label-float">
                     <input
                         value={user}
                         onChange={e => setUser(e.target.value)}
-                        placeholder="Nome ou email"
+                        placeholder=" "
                         required
                     />
+                    <label>Nome ou email</label>
+                    </ floatLabel>
 
+                    <floatLabel className = "label-float">
                     <input
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
-                        placeholder="Senha"
+                        placeholder=" "
                         required
                     />
+                    <label>Senha</label>
+                    </ floatLabel>
+                    
                     <button className="login-button" type="submit">Entrar</button>
                 </div>
             </form>
