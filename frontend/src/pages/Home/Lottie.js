@@ -1,6 +1,6 @@
 import React from 'react'
 import Lottie from 'react-lottie';
-import animationData from './drawkit-grape-animation-2-LOOP.json'
+import animationData from './drawkit-grape-animation.json'
 
 export default class LottieControl extends React.Component {
 
