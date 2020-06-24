@@ -45,33 +45,49 @@ export default function RegisterForm() {
 
                 <div className="inputData">
 
+                <floatLabel className = "reg-label-float">
                     <input
-                        placeholder="Nome"
+                        placeholder=" "
                         value={name}
                         onChange={e => setName(e.target.value)}
                         required
                     />
+                    <label>Nome</label>
+                    </floatLabel>
+
+                    <floatLabel className = "reg-label-float">
                     <input
-                        placeholder="Nome de usuário"
+                        placeholder=" "
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                         required
                     />
+                    <label>Nome de usuário</label>
+                    </floatLabel>
+
+                    <floatLabel className = "reg-label-float">
                     <input
                         type="email"
-                        placeholder="Email"
+                        placeholder=" "
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         required
                     />
+                    <label>Email</label>
+                    </floatLabel>
+
+                    <floatLabel className = "reg-label-float">
                     <input
                         type="password"
-                        placeholder="Pelo menos 6 caracteres"
+                        placeholder=" "
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         required
                         minLength="6"
                     />
+                    <label>Senha</label>
+                    </floatLabel>
+
                     <button className="submit-button" type="submit">Cadastrar</button>
                 </div>
             </form>

@@ -36,7 +36,7 @@ export default function LoginForm() {
                 <div className="loginData">
                     <h1>Entrar</h1>
 
-                    <floatLabel className = "label-float">
+                    <floatLabel className = "log-label-float">
                     <input
                         value={user}
                         onChange={e => setUser(e.target.value)}
@@ -46,7 +46,7 @@ export default function LoginForm() {
                     <label>Nome ou email</label>
                     </ floatLabel>
 
-                    <floatLabel className = "label-float">
+                    <floatLabel className = "log-label-float">
                     <input
                         type="password"
                         value={password}
@@ -56,7 +56,7 @@ export default function LoginForm() {
                     />
                     <label>Senha</label>
                     </ floatLabel>
-                    
+
                     <button className="login-button" type="submit">Entrar</button>
                 </div>
             </form>

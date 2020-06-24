@@ -60,12 +60,12 @@
     background-color: #1d3cbd;
 }
 
-.label-float {
+.log-label-float {
     position: relative;
     display: flex;
 }
 
-label {
+.log-label-float label {
     pointer-events: none;
     font-size: 14px;
     padding-left: 10px;
@@ -77,7 +77,7 @@ label {
     transition: all .1s ease-in-out;
 }
 
-.label-float input:focus + label,
-.label-float input:valid + label{
+.log-label-float input:focus + label,
+.log-label-float input:valid + label{
     transform: translate(0, 4px) scale(.85);
 }

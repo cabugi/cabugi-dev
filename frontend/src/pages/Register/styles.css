@@ -55,3 +55,24 @@
     background-color: #1d3cbd;
 }
 
+.reg-label-float {
+    position: relative;
+    display: flex;
+}
+
+.reg-label-float label {
+    pointer-events: none;
+    font-size: 14px;
+    padding-left: 10px;
+    position: absolute;
+    transform-origin: top left;
+    color: gray;
+    opacity: 1;
+    transform: translate(0, 18px) scale(1);
+    transition: all .1s ease-in-out;
+}
+
+.reg-label-float input:focus + label,
+.reg-label-float input:valid + label{
+    transform: translate(0, 4px) scale(.85);
+}
