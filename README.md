@@ -2,8 +2,9 @@
 ```  
 cd judge-dev/backend/  
 npm install  
-npm install sqlite3  
-npx knex migrate:latest  
+npx knex migrate:latest
+cd ../frontend
+npm install
 ```  
   
 ### Judge    
