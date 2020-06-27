@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import RegisterForm from "./pages/Register";
 import LoginForm from "./pages/Login";
 import Ranking from "./pages/Ranking";
-import Problemas from "./pages/Problemas";
+import Problemas from "./pages/ProblemsList";
+import Profile from "./pages/Profile"
 
 export default function Routes() {
     return (
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route path="/login" component={LoginForm} />
                 <Route path="/ranking" component={Ranking} />
                 <Route path="/problemas" component={Problemas} />
+                <Route path="/users/:id" component={Profile} />
             </Switch>
         </BrowserRouter>
     );

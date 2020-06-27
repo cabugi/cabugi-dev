@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 import Navbar from '../resources/Navbar/index'
 import "./Lottie"
@@ -15,7 +16,7 @@ export default function Home() {
                     <div className="text">
                         <h1>Bem-vindo à plataforma de programadores</h1>
                         <p>Comece já a estudar programação competitiva no site ai mt bom cria conta por favor</p>
-                        <button className="button" type="button">Cadastre-se</button>
+                        <Link to="/register"><button className="button" type="button">Cadastre-se</button></Link>
                     </div>
                 </div>
                 <div className="animation">

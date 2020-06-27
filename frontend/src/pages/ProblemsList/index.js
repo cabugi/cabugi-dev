@@ -1,11 +1,14 @@
 import React from 'react';
+
 import './styles.css';
+import Navbar from '../resources/Navbar';
 
 export default function Problemas() {
 
     return (
         <div className="problemas">
-            <h1>Problemas</h1>
+            <Navbar />
+
         </div>
     );
 

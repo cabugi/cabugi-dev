@@ -4,13 +4,11 @@
     align-items: center;
     background: #ffffff;
     box-shadow: 0 0 0.3rem rgba(0,0,0,.45);
-    padding: 0.2em 3%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0.2em 3% 0px 3%;
 }
 
 .Navbar .LOGO img{
-    height: 50px;
+    height: 3rem;
     width: auto;
 }
 

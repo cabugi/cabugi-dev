@@ -9,7 +9,7 @@
 .register-form {
     width: 400px;
     margin: 120px;
-    padding: 40px 40px;
+    padding: 40px 0px 40px 0px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -17,9 +17,7 @@
     justify-content: center;
     box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.35);
     border-radius: 0.55rem;
-    font-size: 16px;
 }
-
 
 .register-form h1 {
     margin-bottom: 20px;
@@ -36,12 +34,10 @@
     width: 100%;
     max-width: 400px;
     font-size: 17px;
-    line-height: 55px;
 }
 
 .register-form .inputData .submit-button{
     width: 100%;
-    line-height: 45px;
     background-color: #3250d1;
     color: #ffffff;
     border: 0px;

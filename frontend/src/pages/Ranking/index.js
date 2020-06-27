@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
-import Navbar from "../resources/Navbar"
-import "./styles.css"
+import { Link } from 'react-router-dom';
+import Navbar from "../resources/Navbar";
+import "./styles.css";
 
 import api from '../../Api';
 
 export default function Ranking() {
-    return(
-        <ranking className = "ranking">
+    return (
+        <ranking className="ranking">
             <Navbar />
             <users>
                 <table class="rankingTable">

@@ -18,16 +18,17 @@ module.exports = {
 			return res.status(401).send({ message: "Wrong username or password" });
 		}
 
-		const userId = await connection('users')
+		const userData = await connection('users')
 			.where('username', user)
 			.orWhere('email', user)
-			.select('id')
 			.first();
+
+		console.log(userData);
 
 		// Generate token for session
 		// change secret key later
-		await jwt.sign({ userId }, 'senhafoda', { expiresIn: '30' }, (err, token) => {
-			return res.status(200).send({ auth: true, token });
+		await jwt.sign({ userId: userData['id'] }, 'senhafoda', { expiresIn: '30' }, (err, token) => {
+			return res.status(200).send({ auth: true, token, username: userData['username'] });
 		});
 	},
 

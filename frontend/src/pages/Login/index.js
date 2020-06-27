@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 import Navbar from '../resources/Navbar';
@@ -10,16 +10,19 @@ export default function LoginForm() {
 
     const [user, setUser] = useState();
     const [password, setPassword] = useState();
+    const history = useHistory();
+
 
     async function handleLogin(e) {
         e.preventDefault();
 
         try {
             const response = await api.post('/users/login', { user, password });
-
             Cookies.set('session-token', response.data['token'], {
                 path: "/",
             });
+
+            history.push(`/users/${response.data['username']}`);
 
             console.log(Cookies.get('session-token'));
 
