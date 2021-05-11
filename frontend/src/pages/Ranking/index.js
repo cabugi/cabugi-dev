@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from "../resources/Navbar";
 import "./styles.css";
@@ -6,11 +6,17 @@ import "./styles.css";
 import api from '../../Api';
 
 export default function Ranking() {
+    const [users, setUsers] = useState([]);
+    
+    useEffect(() => {
+        api.get('users').then(response => setUsers(response.data))
+    }, [])
+
     return (
-        <ranking className="ranking">
+        <div className="ranking">
             <Navbar />
-            <users>
-                <table class="rankingTable">
+            <div className="users">
+                <table className="rankingTable">
                     <thead>
                         <tr>
                             <th> Posição </th>
@@ -20,27 +26,17 @@ export default function Ranking() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> placeholder </td>
-                            <td> 0 </td>
-                            <td> CE </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> placeholder </td>
-                            <td> 0 </td>
-                            <td> CE </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> placeholder </td>
-                            <td> 0 </td>
-                            <td> SP </td>
-                        </tr>
+                        {users.map(user => (
+                            <tr key={user.id}>
+                                <td>{user.name}</td>
+                                <td>{user.username}</td>
+                                <td>{user.score}</td>
+                                <td>{user.state}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
-            </users>
-        </ ranking>
+            </div>
+        </div>
     )
 }

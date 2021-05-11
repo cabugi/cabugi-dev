@@ -6,7 +6,7 @@ import logo from '../logo/logo.svg';
 
 export default function Navbar() {
     return (
-        <navbar className="Navbar">
+        <div className="Navbar">
             <h1><Link to="/" className="LOGO"><img src={logo} alt="" /></Link></h1>
             <nav>
                 <ul className="nav_links">
@@ -16,10 +16,10 @@ export default function Navbar() {
                     <li><Link to="/"> Sobre </Link></li>
                 </ul>
             </nav>
-            <account className="Account">
+            <div className="Account">
                 <Link to="/login" className="Login"> Entrar </Link>
                 <Link to="/register" className="register-button"><button>Cadastre-se</button></Link>
-            </account>
-        </navbar>
+            </div>
+        </div>
     );
 }
