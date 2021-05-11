@@ -45,7 +45,7 @@ export default function RegisterForm() {
 
                 <div className="inputData">
 
-                <floatLabel className = "reg-label-float">
+                <div className = "reg-label-float">
                     <input
                         placeholder=" "
                         value={name}
@@ -53,9 +53,9 @@ export default function RegisterForm() {
                         required
                     />
                     <label>Nome</label>
-                    </floatLabel>
+                    </div>
 
-                    <floatLabel className = "reg-label-float">
+                    <div className = "reg-label-float">
                     <input
                         placeholder=" "
                         value={username}
@@ -63,9 +63,9 @@ export default function RegisterForm() {
                         required
                     />
                     <label>Nome de usuário</label>
-                    </floatLabel>
+                    </div>
 
-                    <floatLabel className = "reg-label-float">
+                    <div className = "reg-label-float">
                     <input
                         type="email"
                         placeholder=" "
@@ -74,9 +74,9 @@ export default function RegisterForm() {
                         required
                     />
                     <label>Email</label>
-                    </floatLabel>
+                    </div>
 
-                    <floatLabel className = "reg-label-float">
+                    <div className = "reg-label-float">
                     <input
                         type="password"
                         placeholder=" "
@@ -86,7 +86,7 @@ export default function RegisterForm() {
                         minLength="6"
                     />
                     <label>Senha</label>
-                    </floatLabel>
+                    </div>
 
                     <button className="submit-button" type="submit">Cadastrar</button>
                 </div>
