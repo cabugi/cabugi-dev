@@ -12,6 +12,10 @@ export default function Ranking() {
         api.get('users').then(response => setUsers(response.data))
     }, [])
 
+    users.sort((a, b) => {
+        return b.score - a.score;
+    });
+
     return (
         <div className="ranking">
             <Navbar />

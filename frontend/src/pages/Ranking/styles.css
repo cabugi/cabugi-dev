@@ -22,11 +22,8 @@
     font-weight: 600; 
     text-align: left;
 }
-.rankingTable tbody tr {
-    background-color: #ffffff;
-}
-.rankingTable tbody tr:nth-of-type(even) {
-    background-color: #ffffff;
+.rankingTable tbody tr:nth-of-type(odd) {
+    background-color: #fff;
 }
 
 .rankingTable th, td{
