@@ -19,7 +19,19 @@ module.exports = {
         
         return res.json(rankUsers);
     },
+    async profile(req, res) {
 
+        const {
+            username,
+        } = req.body;
+        const user = await connection('users')
+            .where('username', username)
+            .select('username', 'score', 'permissions')
+            .first();
+
+        return res.json(user);
+
+    },
     // Register user
     async register(req, res) {
 

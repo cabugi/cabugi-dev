@@ -8,6 +8,7 @@ const problemsController = require('./controllers/problemsController')
 routes.get('/users', usersController.list);
 routes.post('/users', usersController.register);
 routes.delete('/users', usersController.delete);
+routes.post('/users/profile', usersController.profile);
 routes.post('/users/login', sessionController.login);
 
 routes.get('/submissions', submissionsController.list);
