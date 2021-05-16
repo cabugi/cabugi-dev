@@ -1,4 +1,55 @@
-h1 {
-    text-align: center;
-    font-size: 50px;
+.card{
+    position:relative;
+    background-color: whitesmoke;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    top: 10em;
+    height: 45em;
+    width: 30em;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;  
 }
+
+.box-1{
+    flex:4;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.img-placeholder{
+    flex: 6;
+    background-color:grey;
+    margin-left: 20%;
+    margin-bottom:10%;
+    margin-right: 20%;
+    margin-top:10%;
+}
+.id{
+    flex:1;
+    text-align: left;
+}
+.box-2{
+    flex: 1;
+    font-size: 18px;
+}
+.box-3{
+    flex: 1;
+    font-size: 20px;
+}
+.stats{
+    width: 30%;
+    border-spacing: 10px;
+}
+.stats td{
+    vertical-align: middle;
+    padding: 0;
+}
+.alignright{
+    text-align: right;
+}
+
