@@ -4,7 +4,7 @@
     align-items: center;
     background: #ffffff;
     box-shadow: 0 0 0.3rem rgba(0,0,0,.45);
-    padding: 0.2em 3% 0px 3%;
+    padding: 0.2em 2% 0px 2%;
 }
 
 .Navbar .LOGO img{
@@ -39,7 +39,7 @@
 }
 
 .Navbar .nav_links{
-    margin-left: 1em;
+    margin-left: 2em;
 }
 .Navbar .nav_links li, .Login{
     list-style: none;
